@@ -33,7 +33,7 @@ Code below will check for window.XR and if it doesn't exist will install this po
 so you can safely include this script in any page.
 */
 class XRPolyfill extends EventHandlerBase {
-	constructor(){
+	constructor(baseContainer){
 		super()
 		window.XRDisplay = _XRDisplay
 		window.XRSession = _XRSession
@@ -104,9 +104,9 @@ class XRPolyfill extends EventHandlerBase {
 
 		// These elements are at the beginning of the body and absolutely positioned to fill the entire window
 		// Sessions and realities add their elements to these divs so that they are in the right render order
-		// this._sessionEls = document.createElement('div')
+		this._sessionEls = baseContainer;
 		// this._sessionEls.setAttribute('class', 'webxr-sessions')
-		// this._realityEls = document.createElement('div')
+		this._realityEls = baseContainer;
 		// this._realityEls.setAttribute('class', 'webxr-realities')
 		// for(let el of [this._sessionEls, this._realityEls]){
 		// 	el.style.position = 'absolute'
