@@ -32,7 +32,7 @@ XRPolyfill implements the window.XR functionality as a polyfill
 Code below will check for window.XR and if it doesn't exist will install this polyfill,
 so you can safely include this script in any page.
 */
-class XRPolyfill extends EventHandlerBase {
+export default class XRPolyfill extends EventHandlerBase {
 	constructor(baseContainer){
 		super()
 		window.XRDisplay = _XRDisplay
@@ -144,9 +144,4 @@ class XRPolyfill extends EventHandlerBase {
 
 	//attribute EventHandler ondisplayconnect;
 	//attribute EventHandler ondisplaydisconnect;
-}
-
-/* Install XRPolyfill if window.XR does not exist */
-if(typeof navigator.XR === 'undefined') {
-	navigator.XR = new XRPolyfill()
 }
