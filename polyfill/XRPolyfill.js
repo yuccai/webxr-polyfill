@@ -104,28 +104,28 @@ class XRPolyfill extends EventHandlerBase {
 
 		// These elements are at the beginning of the body and absolutely positioned to fill the entire window
 		// Sessions and realities add their elements to these divs so that they are in the right render order
-		this._sessionEls = document.createElement('div')
-		this._sessionEls.setAttribute('class', 'webxr-sessions')
-		this._realityEls = document.createElement('div')
-		this._realityEls.setAttribute('class', 'webxr-realities')
-		for(let el of [this._sessionEls, this._realityEls]){
-			el.style.position = 'absolute'
-			el.style.width = '100%'
-			el.style.height = '100%'
-		}
+		// this._sessionEls = document.createElement('div')
+		// this._sessionEls.setAttribute('class', 'webxr-sessions')
+		// this._realityEls = document.createElement('div')
+		// this._realityEls.setAttribute('class', 'webxr-realities')
+		// for(let el of [this._sessionEls, this._realityEls]){
+		// 	el.style.position = 'absolute'
+		// 	el.style.width = '100%'
+		// 	el.style.height = '100%'
+		// }
 
-		let prependElements = () => {
-			document.body.style.width = '100%';
-			document.body.style.height = '100%';
-			document.body.prepend(this._sessionEls);
-			document.body.prepend(this._realityEls); // realities must render behind the sessions
-		}
+		// let prependElements = () => {
+		// 	document.body.style.width = '100%';
+		// 	document.body.style.height = '100%';
+		// 	document.body.prepend(this._sessionEls);
+		// 	document.body.prepend(this._realityEls); // realities must render behind the sessions
+		// }
 
-		if(document.readyState !== 'loading') {
-			prependElements();
-		} else {
-			document.addEventListener('DOMContentLoaded', prependElements);
-		}
+		// if(document.readyState !== 'loading') {
+		// 	prependElements();
+		// } else {
+		// 	document.addEventListener('DOMContentLoaded', prependElements);
+		// }
 	}
 
 	getDisplays(){
