@@ -58,7 +58,6 @@ export default class HeadMountedDisplay extends XRDisplay {
 			baseLayer._context.canvas.style.right = '1px'
 			baseLayer._context.canvas.style.width = "100%";
 			baseLayer._context.canvas.style.height = "100%";
-				document.body.appendChild(baseLayer._context.canvas)
 		}).catch(e => {
 			console.error('Unable to init WebVR 1.1 display', e)
 		})

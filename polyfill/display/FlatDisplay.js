@@ -226,8 +226,6 @@ export default class FlatDisplay extends XRDisplay {
 			}, false)	
 		}
 		//this._fixFov(baseLayer.framebufferWidth, baseLayer.framebufferHeight, this._reality._focalLength)
-
-		this._xr._sessionEls.appendChild(baseLayer._context.canvas)
 	}
 
 	/*
