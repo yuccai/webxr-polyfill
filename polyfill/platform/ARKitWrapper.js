@@ -162,7 +162,6 @@ export default class ARKitWrapper extends EventHandlerBase {
 				this._timeOffset += this._timeOffsets[i];
 			}
 			this._timeOffset = this._timeOffset / this._timeOffsets.length;
-			console.log("Native time: " + detail.nativeTime + ", new timeOffset: " + this._timeOffset)
 		}
 			
 		this._adjustARKitTime = function(time) {
@@ -736,7 +735,6 @@ export default class ARKitWrapper extends EventHandlerBase {
 				resolve();
 				return;
 			}
-			console.log('----STOP');
 			window.webkit.messageHandlers.stopAR.postMessage({
 				callback: this._createPromiseCallback('stop', resolve)
 			})
@@ -780,7 +778,6 @@ export default class ARKitWrapper extends EventHandlerBase {
 			options: newO,
 			callback: this._globalCallbacksMap.onWatch
 		}
-		console.log('----WATCH');
 		window.webkit.messageHandlers.watchAR.postMessage(data)
 		return true
 	}
@@ -828,7 +825,6 @@ export default class ARKitWrapper extends EventHandlerBase {
 	*/
 	_sendInit(options){
 		// get device id
-		console.log('----INIT');
 		window.webkit.messageHandlers.initAR.postMessage({
 			options: options,
 			callback: this._globalCallbacksMap.onInit

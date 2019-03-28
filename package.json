@@ -29,6 +29,5 @@
     "webpack": "^3.5.5",
     "wrapper-webpack-plugin": "^1.0.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }

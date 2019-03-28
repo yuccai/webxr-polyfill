@@ -245,7 +245,6 @@ export default class XRSession extends EventHandlerBase {
 
     _handleNewWorldAnchor(event) {
 		let xrAnchor = event.detail
-        //console.log(`New world anchor: ${JSON.stringify(xrAnchor)}`)
 
 		if (!xrAnchor.uid.startsWith('cameraAnchor-')) {
 			try {
@@ -262,7 +261,7 @@ export default class XRSession extends EventHandlerBase {
 	            console.error('NEW_WORLD_ANCHOR event error', e)
 	        }
 	    } else {
-	        console.log('not passing NEW_WORLD_ANCHOR event to app for ', xrAnchor.uid)
+	        // console.log('not passing NEW_WORLD_ANCHOR event to app for ', xrAnchor.uid)
 	    }
     }
 
